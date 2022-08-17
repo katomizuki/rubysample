@@ -1,0 +1,39 @@
+<div class="m-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">出社時刻</th>
+          <th scope="col">退社時刻</th>
+          <th scope="col">休憩時間</th>
+          <th scope="col">労働時間</th>
+        </tr>
+      </thead>
+       <% @attendances.each do |attendance| %>
+        <% if attendance.start_time.year.to_i == @year && attendance.start_time.month.to_i == @month %>
+      <tbody>
+        <tr>
+          <td><%= (attendance.start_time.year).to_s + "年" + (attendance.start_time.month).to_s + "月" + (attendance.start_time.day).to_s + "日" + (attendance.start_time.hour).to_s + "時" + (attendance.start_time.min).to_s + "分" + (attendance.start_time.sec).to_s + "秒" %></td>
+
+          <% if !attendance.end_time.nil? %>
+          <td><%= (attendance.end_time.year).to_s + "年" + (attendance.end_time.month).to_s + "月" + (attendance.end_time.day).to_s + "日" + (attendance.end_time.hour).to_s + "時" + (attendance.end_time.min).to_s + "分"+ (attendance.end_time.sec).to_s + "秒"  %> </td>
+           <% end %>
+
+          <% if !attendance.rest_start_time.nil? && !attendance.rest_end_time.nil?  %>
+          <td><%= ((attendance.rest_end_time.to_time - attendance.rest_start_time.to_time) / 60).floor(1).to_s + "分" %></td>
+          <% end %>
+
+          <% if !attendance.end_time.nil? && !attendance.start_time.nil? &&  !attendance.rest_start_time.nil? && !attendance.rest_end_time.nil? %>
+          <td><%= (((attendance.end_time.to_time - attendance.start_time.to_time) - (attendance.rest_end_time.to_time - attendance.rest_start_time.to_time)) / 60).floor(2).to_s + "分" 
+          %></td>
+           <% end %>
+ 
+        </tr>
+      </tbody>
+      <% end %>
+      <% end %>
+    </table>
+  </div>
+  </div>
+    <div class="text-center">
+    <%= link_to "もどる", user_path ,class: "btn btn-primary mt-3"%>
+    </div>

@@ -1,0 +1,15 @@
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/mizuki/.rbenv/versions/3.1.2/bin/ruby -I /Users/mizuki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-uetqhk sitelibdir\=./.gem.20220803-94605-uetqhk clean
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-uetqhk sitelibdir\=./.gem.20220803-94605-uetqhk
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-uetqhk sitelibdir\=./.gem.20220803-94605-uetqhk install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20220803-94605-uetqhk/skiptrace/internal

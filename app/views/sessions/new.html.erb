@@ -1,0 +1,28 @@
+<div class="pt-5">
+<h1 class="text-center"> ログイン画面</h1>
+<div class="w-50 mx-auto">
+<%= form_with url: login_path, local: true do |form| %>
+
+ 
+   <div class="field form-group">
+   <%= form.label :email,"メールアドレス" %>
+   <%= form.text_field :email, class: "form-control", placeholder: "メールアドレス" %>
+   </div>
+
+   <div class="field form-group">
+   <%= form.label :password,"パスワード" %>
+   <%= form.password_field :password, class: "form-control", placeholder: "パスワード"  %>
+   </div>
+
+  <div class="form-group">
+   <%= form.submit "ログイン", class: "btn btn-primary mt-3" %>
+   </div>
+
+   <div>
+  <%= link_to "新規登録画面へ", new_user_path ,class: "btn btn-secondary mt-3"%>
+  </div>
+
+  <% end %>
+</div>
+
+  </div>

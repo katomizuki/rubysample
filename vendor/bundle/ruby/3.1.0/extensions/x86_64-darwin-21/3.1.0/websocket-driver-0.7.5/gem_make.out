@@ -1,0 +1,15 @@
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/mizuki/.rbenv/versions/3.1.2/bin/ruby -I /Users/mizuki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-ubr58e sitelibdir\=./.gem.20220803-94605-ubr58e clean
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-ubr58e sitelibdir\=./.gem.20220803-94605-ubr58e
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-ubr58e sitelibdir\=./.gem.20220803-94605-ubr58e install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20220803-94605-ubr58e

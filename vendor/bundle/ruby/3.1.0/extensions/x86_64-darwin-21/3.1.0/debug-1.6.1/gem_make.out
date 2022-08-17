@@ -1,0 +1,16 @@
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/debug-1.6.1/ext/debug
+/Users/mizuki/.rbenv/versions/3.1.2/bin/ruby -I /Users/mizuki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/debug-1.6.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-7d76uc sitelibdir\=./.gem.20220803-94605-7d76uc clean
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/debug-1.6.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-7d76uc sitelibdir\=./.gem.20220803-94605-7d76uc
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/debug-1.6.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-7d76uc sitelibdir\=./.gem.20220803-94605-7d76uc install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20220803-94605-7d76uc/debug

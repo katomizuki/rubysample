@@ -1,0 +1,16 @@
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.4/ext/strscan
+/Users/mizuki/.rbenv/versions/3.1.2/bin/ruby -I /Users/mizuki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.4/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-y87m0b sitelibdir\=./.gem.20220803-94605-y87m0b clean
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.4/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-y87m0b sitelibdir\=./.gem.20220803-94605-y87m0b
+compiling strscan.c
+linking shared-object strscan.bundle
+
+current directory: /Users/mizuki/Documents/intern-web/webKadai/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.4/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20220803-94605-y87m0b sitelibdir\=./.gem.20220803-94605-y87m0b install
+/usr/bin/install -c -m 0755 strscan.bundle ./.gem.20220803-94605-y87m0b
