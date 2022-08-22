@@ -1,9 +1,4 @@
 class CalendarsController < ApplicationController
-  
-  def month 
-    
-    redirect_to calendar_path
-  end
 
   def show
     month_str = params[:month]

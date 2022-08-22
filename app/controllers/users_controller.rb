@@ -20,26 +20,26 @@ class UsersController < ApplicationController
     end
   end
 
-  def month 
-    month_str = params[:month]
-    month_date = Date.strptime(month_str, '%Y-%m')
-    @month = month_date.month
-    @year = month_date.year
-  end
-
-
   def show
     user_id = current_user.id
 
     attendances = Attendance.where(user_id: user_id)  
     @attendance = attendances.last
     attendance = attendances.last
+    @endrest = true
     if attendance.start_time != nil && attendance.end_time != nil
       @workstatus = "勤務してないよ"
+      @endButton = true
+      @startrestButton = true
     else 
       @workstatus = "勤務中だよ"
+      @endButton = false
+      @startrestButton = false
+      @startButton = true
       if attendance.rest_start_time != nil && attendance.rest_end_time == nil
         @workstatus = "休憩中だよ"
+        @endrest = false
+        @startrestButton = true
       end
     end
   end
