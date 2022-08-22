@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def create
- 
     user = User.new(user_params)
     if user.save 
       session[:user_id] = user.id
@@ -31,9 +30,18 @@ class UsersController < ApplicationController
 
   def show
     user_id = current_user.id
-    attencance = Attendance.find_by(user_id: user_id)
-    @attendance = attencance
-    @attendances = Attendance.where(user_id: user_id)  
+
+    attendances = Attendance.where(user_id: user_id)  
+    @attendance = attendances.last
+    attendance = attendances.last
+    if attendance.start_time != nil && attendance.end_time != nil
+      @workstatus = "勤務してないよ"
+    else 
+      @workstatus = "勤務中だよ"
+      if attendance.rest_start_time != nil && attendance.rest_end_time == nil
+        @workstatus = "休憩中だよ"
+      end
+    end
   end
 
   private

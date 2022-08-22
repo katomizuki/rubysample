@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   get 'login', to: "sessions#new"
   post 'login', to: "sessions#create"
   delete 'logout', to: "sessions#destroy"
-  resource 'attendance', only: [:create, :update]
-  patch 'reststart', to: "attendances#start"
-  patch 'restend', to: "attendances#end"
+  
+  resources 'attendances'
 
 
   # Defines the root path route ("/") logout_path

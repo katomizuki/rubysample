@@ -4,9 +4,12 @@ class AttendancesController < ApplicationController
     @attendance = attendance
   end
 
+  def index 
+  end
+
+
    def create
     attendance = Attendance.new
-
     attendance.start_time = Time.now
     attendance.user_id = current_user.id
     @attendance = attendance
@@ -16,44 +19,34 @@ class AttendancesController < ApplicationController
     end
   end
 
-  def start
-    user_id = current_user.id
-    attendances = Attendance.where(user_id: user_id).select { |element| element.rest_start_time.nil? }
-    if attendances.count > 0
-       #binding.pry
-    @attendance = attendances[0]
+def update
 
+   time_type = params[:type]
+   attendance = Attendance.find(params[:id])
+   @attendance = attendance
+   ## 退勤
+   if time_type == "end"
+    if @attendance.update(end_time: Time.now)
+      redirect_to user_path, notice: "退勤しました"
+    end
+   end
+
+   ##休憩時間開始
+   if time_type == "rest_start"
       if @attendance.update(rest_start_time: Time.now)
         redirect_to user_path, notice: "休憩入りました"
     end
   end
-end
 
-  def end
-    user_id = current_user.id
-    attendances = Attendance.where(user_id: user_id).select { |element| element.rest_end_time.nil? }
-    if attendances.count > 0
-    @attendance = attendances[0]
-
+   ##休憩時間終了
+   if time_type == "rest_end"
       if @attendance.update(rest_end_time: Time.now)
         redirect_to user_path, notice: "休憩から戻りました"
     end
   end
-end
+
+end  
 
 
-  def update
-    user_id = current_user.id
-    attendances = Attendance.where(user_id: user_id).select { |element| element.end_time.nil? }
-    if attendances.count > 0
-    @attendance = attendances[0]
-
-      if @attendance.update(end_time: Time.now)
-        redirect_to user_path, notice: "退勤しました"
-    end
-  end
-end
-
-  
   
 end

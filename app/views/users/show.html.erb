@@ -6,23 +6,24 @@
     <h3 class="text-center">ようこそ "<strong><%= current_user.name %></strong>" さん</h3>
   </div>
 
+  <%= @workstatus %>
 
     <div class="container w-50">
     <div class="row text-center">
     <div class="col">
-    <%= button_to "出社",attendance_path, method: :post, class: "btn btn-primary m-1"%>
+    <%= button_to "出社", attendances_path, method: :post, class: "btn btn-outline-secondary m-1"%>
     </div>
 
     <div class="col">
-    <%= button_to "休憩", reststart_path, method: :patch, class: "btn btn-outline-secondary m-1"%>
+    <%= button_to "休憩", attendance_path(@attendance), method: :patch, params: { type: "rest_start" }, class: "btn btn-outline-secondary m-1"%>
     </div>
 
       <div class="col">
-      <%= button_to "戻り", restend_path, method: :patch, class: "btn btn-outline-secondary m-1"%>
+      <%= button_to "戻り", attendance_path(@attendance), method: :patch, params: { type: "rest_end" }, class: "btn btn-outline-secondary m-1"%>
       </div>
 
       <div class="col">
-      <%= button_to "退社", attendance_path, method: :patch, class: "btn btn-outline-info m-1"%>
+      <%= button_to "退社", attendance_path(@attendance), method: :patch, params: { type: "end" }, class: "btn btn-outline-info m-1"%>
       </div>
 
       <div class="col-2">
@@ -30,6 +31,9 @@
       </div>
       </div>
     </div>
+
+  
+
 
   
 
