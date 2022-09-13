@@ -24,7 +24,6 @@ class UsersController < ApplicationController
     @user = User.where(id: user_id).first
     attendances = Attendance.where(user_id: user_id)  
     @attendance = attendances.last
-    ## なかったと(勤務を一度もしたことないとき）
   end
 
   private
