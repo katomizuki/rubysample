@@ -7,7 +7,7 @@
 
   <div class="text-center m-3">
    <h4>
-      <%= @workstatus %>
+      <%= @user.decorate.work_status_alert_title %>
    </h4>
   </div>
  
@@ -19,15 +19,15 @@
     </div>
 
     <div class="col">
-    <%= button_to "休憩", attendance_path(id: 1), method: :patch, params: { type: "rest_start" }, class: "btn btn-outline-secondary m-1", disabled: @user.decorate.start_rest_button_disabled %>
+    <%= button_to "休憩", @attendance, method: :patch, params: { type: "rest_start" }, class: "btn btn-outline-secondary m-1", disabled: @user.decorate.start_rest_button_disabled %>
     </div>
 
       <div class="col">
-      <%= button_to "戻り", attendance_path(id: 1), method: :patch, params: { type: "rest_end" }, class: "btn btn-outline-secondary m-1",disabled: @user.decorate.end_rest_button_disabled %>
+      <%= button_to "戻り", @attendance, method: :patch, params: { type: "rest_end" }, class: "btn btn-outline-secondary m-1",disabled: @user.decorate.end_rest_button_disabled %>
       </div>
 
       <div class="col">
-      <%= button_to "退社", attendance_path(id: 1), method: :patch, params: { type: "end" }, class: "btn btn-outline-info m-1", disabled: @user.decorate.end_job_button_disabled %>
+      <%= button_to "退社", @attendance, method: :patch, params: { type: "end" }, class: "btn btn-outline-info m-1", disabled: @user.decorate.end_job_button_disabled %>
       </div>
 
       <div class="col-2">

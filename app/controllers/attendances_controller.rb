@@ -23,6 +23,7 @@ def update
 
    time_type = params[:type]
    attendance = Attendance.find(params[:id])
+  
    @attendance = attendance
    ## 退勤
    if time_type == "end"
