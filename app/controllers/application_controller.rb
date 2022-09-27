@@ -12,7 +12,7 @@ helper_method :current_user
   def already 
     ## 現在のユーザーがnilか確認。unlessはifの逆の意味
     unless current_user.nil?
-      redirect_to user_path, notice: "You are already logged in."
+      redirect_to new_attendance_path, notice: "You are already logged in."
     end
   end
 

@@ -1,7 +1,10 @@
 class AttendancesController < ApplicationController
 
   def new 
-    @attendance = attendance
+    user_id = current_user.id
+    @user = User.where(id: user_id).first
+    attendances = Attendance.where(user_id: user_id)  
+    @attendance = attendances.last
   end
 
   def index 
