@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path, notice: "ログインに成功したよ"
+      redirect_to new_attendance_path, notice: "ログインに成功したよ"
     else 
       flash.now[:alert] = "メールかパスワードが違いますよ"
       ## new画面に戻る。

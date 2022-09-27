@@ -17,7 +17,7 @@ class AttendancesController < ApplicationController
     attendance.user_id = current_user.id
     @attendance = attendance
     if attendance.save
-      redirect_to user_path, notice: "出社しました"
+      redirect_to new_attendance_path, notice: "出社しました"
       @attendance = attendance
     end
   end
@@ -31,21 +31,21 @@ def update
    ## 退勤
    if time_type == "end"
     if @attendance.update(end_time: Time.now)
-      redirect_to user_path, notice: "退勤しました"
+      redirect_to new_attendance_path, notice: "退勤しました"
     end
    end
 
    ##休憩時間開始
    if time_type == "rest_start"
       if @attendance.update(rest_start_time: Time.now)
-        redirect_to user_path, notice: "休憩入りました"
+        redirect_to new_attendance_path, notice: "休憩入りました"
     end
   end
 
    ##休憩時間終了
    if time_type == "rest_end"
       if @attendance.update(rest_end_time: Time.now)
-        redirect_to user_path, notice: "休憩から戻りました"
+        redirect_to new_attendance_path, notice: "休憩から戻りました"
     end
   end
 

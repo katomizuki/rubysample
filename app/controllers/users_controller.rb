@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if user.save 
       session[:user_id] = user.id
       ## noticeは処理が成功した時に出すアラート　ちなみに失敗はaler
-      redirect_to user_path, notice: "新規会員登録完了"
+      redirect_to new_attendance_path, notice: "新規会員登録完了"
       ## アクションを介すのがredirect_to
     else 
       ## アクションを介さないのがrender
