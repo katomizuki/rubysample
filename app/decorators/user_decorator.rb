@@ -2,32 +2,44 @@ class UserDecorator < ApplicationDecorator
   delegate_all
 
   def end_job_button_disabled
-    title = work_status_alert_title()
-    if title == "勤務中だよ"
+    attendance = fetch_attendance()
+    if attendance.is_finished_work?
+      return true
+    end
+    if attendance.is_working?
       return false
     end
     return true
   end
 
   def start_rest_button_disabled
-    title = work_status_alert_title()
-    if title == "勤務中だよ"
+    attendance = fetch_attendance()
+    if attendance.is_finished_work?
+      return true
+    end
+    if attendance.is_rest?
       return false
     end
       return true
   end
 
   def start_job_button_disabled
-    title = work_status_alert_title()
-    if title == "勤務してないよ"
-      return false
-    end
+    attendance = fetch_attendance()
+    if attendance.is_finished_work?
       return true
+    end
+    if attendance.is_working? || attendance.is_rest?
+      return true
+    end
+      return false
   end
 
   def end_rest_button_disabled
-    title = work_status_alert_title()
-    if title == "休憩中だよ"
+     attendance = fetch_attendance()
+     if attendance.is_finished_work?
+      return true
+    end
+    if attendance.is_rest?
       return false
     end
       return true
@@ -36,15 +48,14 @@ class UserDecorator < ApplicationDecorator
 
   def work_status_alert_title
     attendance = fetch_attendance()
-    if attendance.nil? || (!attendance.start_time.nil? && !attendance.end_time.nil?) || (attendance.start_time.nil? && attendance.end_time.nil?)
-      return "勤務してないよ"
+    if attendance.is_working?
+      return "勤務中だよ"
     end
 
-    if !attendance.rest_start_time.nil? && attendance.rest_end_time.nil?
+    if attendance.is_rest?
       return "休憩中だよ"
     end 
-
-      return "勤務中だよ"
+      return "勤務終了"
   end
 
   def fetch_attendance 
