@@ -1,0 +1,17 @@
+current directory: /Users/mizuki/Downloads/rubysample/vendor/bundle/ruby/3.1.0/gems/debug-1.6.2/ext/debug
+/Users/mizuki/.rbenv/versions/3.1.2/bin/ruby -I /Users/mizuki/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/mizuki/Downloads/rubysample/vendor/bundle/ruby/3.1.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220927-98822-d8k6om sitelibdir\=./.gem.20220927-98822-d8k6om clean
+
+current directory: /Users/mizuki/Downloads/rubysample/vendor/bundle/ruby/3.1.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220927-98822-d8k6om sitelibdir\=./.gem.20220927-98822-d8k6om
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/mizuki/Downloads/rubysample/vendor/bundle/ruby/3.1.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220927-98822-d8k6om sitelibdir\=./.gem.20220927-98822-d8k6om install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20220927-98822-d8k6om/debug
